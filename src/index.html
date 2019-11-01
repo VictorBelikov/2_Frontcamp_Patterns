@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News Portal</title>
+</head>
+<body>
+<main class="global-wrapper">
+  <div class="content">
+    <div class="search-block">
+      <form id="search-form" class="search">
+        <input type="text" id="search-input" class="search-input" placeholder="search news...">
+        <button type="submit" id="search-btn" class="serch-btn">Search</button>
+      </form>
+      <select name="channels" id="news-channels" class="news-channels">
+        <option id="select-default" value="" selected>select channel</option>
+        <option value="bbc-news">bbc-news</option>
+        <option value="usa-today">usa-today</option>
+        <option value="abc-news">abc-news</option>
+        <option value="news-com-au">news-com-au</option>
+        <option value="rbc">rbc</option>
+      </select>
+    </div>
+    <div id="results" class="results">
+      <ul id="news-block" class="news-block">
+<!--        <li>-->
+<!--          <a href="${article.url}">-->
+<!--            <figure class="article__img&#45;&#45;wrapper">-->
+<!--              <img src="${article.urlToImage}" alt="article picture" class="article__img">-->
+<!--            </figure>-->
+<!--            <div class="article__data">-->
+<!--              <h4 class="article__title'">${article.title}</h4>-->
+<!--              <p class="article__content">${article.content || ''}</p>-->
+<!--              <p class="article__author">Author: ${article.author}</p>-->
+<!--            </div>-->
+<!--          </a>-->
+<!--        </li>-->
+      </ul>
+    </div>
+  </div>
+</main>
+</body>
+</html>
