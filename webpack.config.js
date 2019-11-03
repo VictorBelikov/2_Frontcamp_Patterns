@@ -4,10 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: ['babel-polyfill', './src/js/index.js'],
+  entry: ['babel-polyfill', './src/js/controllers/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/bundle.js',
+    chunkFilename: 'js/chunk-[id].js',
   },
   devServer: {
     contentBase: './dist',
