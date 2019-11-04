@@ -24,7 +24,7 @@ const controlSearch = async (elem) => {
       searchView.rederResults(state.search.articles);
     }
   } catch (err) {
-    const module = await import('../models/ErrorHandler.js');
+    const module = await import('./errorHandler.js');
     const errorHandler = module.default;
     errorHandler(err);
   }
