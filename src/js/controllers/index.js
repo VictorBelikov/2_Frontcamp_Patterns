@@ -1,7 +1,6 @@
 import '../../scss/style.scss';
-
 import Search from '../models/Search';
-import * as searchView from '../views/searchView';
+import * as searchController from './searchController';
 import elements from '../views/base';
 
 /**
@@ -11,20 +10,19 @@ const state = {};
 
 const controlSearch = async (elem) => {
   try {
-    const query = searchView.getInput(elem);
+    const query = searchController.getInput(elem);
 
     if (query && query.trim() !== '') {
       state.search = new Search(query);
       await state.search.getNews(elem);
 
-      searchView.clearInput();
-      searchView.setSelectDefault();
-      searchView.clearResults();
-
-      searchView.rederResults(state.search.articles);
+      searchController.clearInput();
+      searchController.setSelectDefault();
+      searchController.clearResults();
+      searchController.rederArticles(state.search.articles);
     }
   } catch (err) {
-    const module = await import('./errorHandler.js');
+    const module = await import('./errorController.js');
     const errorHandler = module.default;
     errorHandler(err);
   }

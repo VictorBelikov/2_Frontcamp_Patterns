@@ -1,7 +1,7 @@
 import errPopupView from '../views/errPopupView';
 
+// Creating error popup use 'Singleton' pattern
 export default class ErrorPopup {
-  // Creating error popup use 'Singleton' pattern
   constructor() {
     if (typeof ErrorPopup.instance === 'undefined') {
       ErrorPopup.instance = this;

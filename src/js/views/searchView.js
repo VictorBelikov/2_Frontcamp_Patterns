@@ -1,21 +1,5 @@
-import elements from './base';
-
-export const getInput = (elem) => elem.value;
-
-export const clearInput = () => {
-  elements.searchInput.value = '';
-};
-
-export const clearResults = () => {
-  elements.newsBlock.innerHTML = '';
-};
-
-export const setSelectDefault = () => {
-  elements.selectDefault.selected = 'selected';
-};
-
-const renderArticle = (article) => {
-  const markup = `
+export default (article) => {
+  return `
     <li>
       <a href="${article.url}" target="_blank">
         <figure class="article__img--wrapper">
@@ -30,10 +14,4 @@ const renderArticle = (article) => {
       </a>
     </li>
   `;
-
-  elements.newsBlock.insertAdjacentHTML('beforeend', markup);
-};
-
-export const rederResults = (articles) => {
-  articles.forEach((elem) => renderArticle(elem));
 };
