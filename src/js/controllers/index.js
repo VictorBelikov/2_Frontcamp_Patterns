@@ -19,7 +19,7 @@ const controlSearch = async (elem) => {
       searchController.clearInput();
       searchController.setSelectDefault();
       searchController.clearResults();
-      searchController.rederArticles(state.search.articles);
+      searchController.renderArticles(state.search.articles);
     }
   } catch (err) {
     const module = await import('./errorController.js');

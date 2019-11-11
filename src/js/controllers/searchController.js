@@ -15,7 +15,7 @@ export const setSelectDefault = () => {
   elements.selectDefault.selected = 'selected';
 };
 
-export const rederArticles = (articles) => {
+export const renderArticles = (articles) => {
   articles.forEach((article) => {
     const markup = searchView(article);
     elements.newsBlock.insertAdjacentHTML('beforeend', markup);

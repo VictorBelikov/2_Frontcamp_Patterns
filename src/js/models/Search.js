@@ -15,15 +15,16 @@ export default class Search {
   }
 
   async getNews(elem) {
-    const apiKey = 'ec3eea97cc834c179ebf45befd73ec8f';
+    const API_KEY = 'ec3eea97cc834c179ebf45befd73ec8f';
+    const PAGE_SIZE = 10;
     const date = getCurrDate();
 
     try {
-      const url = buildUrl(elem.id, this.channel, apiKey, date);
+      const url = buildUrl(elem.id, this.channel, API_KEY, date, PAGE_SIZE);
       const request = requestProxy(url, 'GET');
       const response = await fetch(request);
       const result = await response.json();
-      this.articles = result.articles.slice(0, 10);
+      this.articles = result.articles;
     } catch (err) {
       console.log(`!!ERROR!! in Search module: ${err}`);
       throw err;

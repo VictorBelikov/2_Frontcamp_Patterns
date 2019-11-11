@@ -1,5 +1,5 @@
 class RequestFactory {
-  createRequest(url, method, body) {
+  static createRequest(url, method, body) {
     switch (method) {
       case 'GET':
         return new Request(url, { method, body });
@@ -20,5 +20,5 @@ class RequestFactory {
 }
 
 export default (url, method) => {
-  return new RequestFactory().createRequest(url, method);
+  return RequestFactory.createRequest(url, method);
 };
